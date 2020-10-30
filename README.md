@@ -16,3 +16,39 @@ on setting up a variety of IoT sensors in the real world around our personal spa
 ARENA. Anyone with access to the appropriate link can, through a web browser, explore these virtual spaces and interact 
 with the physical world themselves. Although management of IoT devices remotely is by no means a novel concept, 
 ARENA allows users to do so with a physical touch.
+
+Timeline:
+
+Week 1:
+
+Generally searched for ideas for the project.
+
+Week 2: 
+
+Focused in on the idea of Mixed Reality/Augmented Reality.
+
+Week 3: 
+
+Researched into the ARENA framework and looked into its uses.
+Created project github website.
+
+Week 4: 
+
+Completed ARENA tutorial that was presented. Began discussion of using physical sensors with ARENA for interaction.
+Completed Proposal and began working on Python code for the project.
+
+Week 5:
+Begin background research on Mixed Reality and its implementations. Specifically, reserach focused on how it could help with simulation-based
+learning and remote activity.
+
+Week 6:
+Have Python Code written using the ARENA library provided that allows for beta testing of 1 devices.
+Begin working on video for presentation.
+
+Week 8: 
+Have an implementation fully  tested and working for at least 1 device.
+Have 5 minute video presentation ready to show design.
+
+Week 10:
+Have all devices intended to be used with the project fully working.
+Have a full demo ready to present along with 15 minute video.
