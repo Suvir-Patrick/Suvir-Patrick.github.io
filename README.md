@@ -1,3 +1,7 @@
+M202A Project Fall 2020
+
+Abstract:
+
 Mixed reality is the idea of combining virtual and real worlds in order to create an environment where both physical
 and digital objects exist. This hybrid between reality and virtual reality allows for interaction between the physical
 and virtual world. In the past mixed reality has been used in fields such as simulation-bsaed learning, remote learning,
