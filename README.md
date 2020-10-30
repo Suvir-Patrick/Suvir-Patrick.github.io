@@ -4,8 +4,8 @@ Abstract:
 
 Mixed reality is the idea of combining virtual and real worlds in order to create an environment where both physical
 and digital objects exist. This hybrid between reality and virtual reality allows for interaction between the physical
-and virtual world. In the past mixed reality has been used in fields such as simulation-bsaed learning, remote learning,
-and military training.ARENA is a framework that makes it easy to create and share mixed reality content. 
+and virtual worlds. In the past mixed reality has been used in fields such as simulation-based learning, remote learning,
+and military training. ARENA is a framework that makes it easy to create and share mixed reality content. 
 In the past there have been several technical hurdles that prevented developers from making easily 
 accessible mixed reality content including, but not limited to: latency requirements, synchronization 
 between multiple users, and a diversity in compute capabilities. Using the ARENA framework, we'd like to 
