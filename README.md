@@ -38,7 +38,7 @@ Completed ARENA tutorial that was presented. Began discussion of using physical 
 Completed Proposal and began working on Python code for the project.
 
 Week 5:
-Begin background research on Mixed Reality and its implementations. Specifically, reserach focused on how it could help with simulation-based
+Begin background research on Mixed Reality and its implementations. Specifically, research focused on how it could help with simulation-based
 learning and remote activity.
 
 Week 6:
