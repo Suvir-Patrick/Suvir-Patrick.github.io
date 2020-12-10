@@ -39,20 +39,25 @@
               <p class="text">
                 For the purposes of demonstrating how you might use ARENA to manage your own home 
                 a replica was created of Patrick's apartment using Blender, a free open-source 3D modeling tool:
-                <img class="image center" src="img/blender_colors.PNG">
-                <img class="image center" src="img/blender_wire.PNG">
+                <img class="image center" src="img/blender_colors.PNG" style="max-width: 700px;">
+                <img class="image center" src="img/blender_wire.PNG" style="max-width: 700px;">
                 Interior shots:
-                <img class="image center" src="img/interior_colors.PNG">
-                <img class="image center" src="img/interior_wire.PNG">
+                <img class="image center" src="img/interior_colors.PNG" style="max-width: 700px;">
+                <img class="image center" src="img/interior_wire.PNG" style="max-width: 700px;">
                 Once the model is created in Blender, it can be exported in the .glb file format and imported direclty into the ARENA
                 scene of your choice, via the <a target="_blank" href="https://arena.conix.io/content/tutorials/filestore.html">ARENA file store</a>:
                 <img class="image center" src="img/arena_screenshot.PNG">
               </p>
 
-              <h2>Simulated Data</h2>
+              <h2>Simulated Data Use</h2>
               <hr>
               <p class="text">
-                Talk about use of simulated sensors due to COVID-19 pandemic constraints
+                Due to the COVID-19 pandemic, we were quite limited on hardware resources and space and were unable to meet together
+                physically over the course of the project's design. Additionally, in terms of hardware, each of us only possessed
+                a single Arduino Nano 33 BLE Sense (equipped with its various sensors). As a result, we had to simulate some of the
+                sensor and feedback data for this project. For example, in the Generalized Heatmaps demo, we read real temperature and humidity data from
+                the Arduino as a single source and added some uniform noise in order to simulate having multiple sensors spread out in
+                a room.
               </p>
 
               <h2>"Smart Lock Management" Demo Design</h2>
