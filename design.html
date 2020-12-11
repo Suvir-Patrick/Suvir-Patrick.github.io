@@ -39,7 +39,7 @@
                 we were mainly concerned with how we would be able to utilize real-world sensors to provide feedback in the virtual
                 world.
                 As it turns out, ARENA allowed us to abstract this interaction to the high-level idea of publishers and subscribers
-                using MQTT messages. From their documentation:
+                using MQTT messages. From their documentation (link in references):
                 <br>
                 <i>"ARENA communications are a series of MQTT messages which govern all objects and their properties."</i>
                 <br>
@@ -55,7 +55,11 @@
                 perform our sensing (purchased as required hardware for the class). While a great board for its price, this version did not include
                 any wireless capability outside of Bluetooth. Normally, as we mentioned above, you'd want to install a device specific library
                 to send MQTT messages, but that was not possible with this device. Instead, we used the ARENA-py Python library and general Python
-                capabilities to extract sensor data and forward it to the ARENA on the behalf of the Arduino.
+                capabilities to extract sensor data and forward it to the ARENA on the behalf of the Arduino. The code we used to do that was
+                based off the example here:
+                <a target="_blank" href=https://problemsolvingwithpython.com/11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python/>
+                  https://problemsolvingwithpython.com/11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python/
+                </a>
                 With the exception of the Arduino code written in "Arduino-abstracted" C++, this project was almost entirely written in Python.
               </p>
 
@@ -74,7 +78,7 @@
                 <img class="image center" src="img/arena_screenshot.PNG">
               </p>
 
-              <h2>Simulated Data Use</h2>
+              <h2>Real and Simulated Data Use</h2>
               <hr>
               <p class="text">
                 Due to the COVID-19 pandemic, we were quite limited on hardware resources and space and were unable to meet together
@@ -174,7 +178,7 @@
                 <img class="image center" src="img/gas_leak_email.PNG" style="max-width: 500px;">
                 Reason being, that ARENA scenes can also be accessed on mobile device browsers, which makes them especially handy
                 for when someone is away from home, and has no access to a computer! The details of implementation are included
-                in utils.py for the demo source code.
+                in utils.py for the demo source code, credit is given to RealPython.com for helping us get this setup (link in references).
               </p>
 
               <h2>"Smart Lock Management" Demo Design</h2>
