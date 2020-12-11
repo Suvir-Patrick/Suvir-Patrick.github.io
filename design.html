@@ -32,6 +32,9 @@
               <h2 class="add-top-margin">Tech Overview</h2>
               <hr>
               <p class="text">
+                If you want to see video demos, the "Results" menu bar link at the top contains them!
+                <br>
+                <br>
                 Talk about how ARENA interacts with sensors at a high level (MQTT, etc.)
               </p>
 
@@ -61,17 +64,7 @@
                 a room.
               </p>
 
-              <h2>"Smart Lock Management" Demo Design</h2>
-              <hr>
-              <p class="text">
-                Overview of demo components
-
-                <h3>Section Header</h3>
-                Talk about the design of a component here
-
-                <h3>Section Header</h3>
-                Talk about the design of a component here
-              </p>
+              
 
               <h2>"Generalized Heat Maps" Demo Design</h2>
               <hr>
@@ -108,15 +101,71 @@
                       color = default_map_cube_color, # Tuple (r,g,b)
                       data = '{"material": {"opacity": 0.5}}'
                     ))</pre>
+                  
+                Buttons (which are also cube-like arena.Objects) are also instantiated similarly with difference being they have a
+                a "clickable" attribute and a callback function specification to determine how they behave when clicked by
+                by the user. The callback function takes in the callback message as a single argument which allows the programmer
+                to decide what sort of events to take action on. In this case, when a user has a "mousedown" event:
+                <pre class="prettyprint lang-py">
+                  def button_callback(event):
+                    if event.event_type == arena.EventType.mousedown:
+                      print("Source: ", event.object_id)
+                      ...</pre>
+                Each "event" instance also has the object associated with it, so we can share a single callback for each button
+                object simply by checking the event.object_id attribute (the objName attribute during instantiation above). For
+                this project, each button to select the type of sensor you want to see heatmap data from simply changes a global
+                variable named sensor_to_read (the sensor read function constantly polls this variable). The reason we chose to
+                do it this way was for a few reasons:
+                <ul>
+                  <li>At the time of this project, ARENA is still in heavy development, and documentation is understandably sparse</li>
+                  <li>Most of the example code utilizes globals this way, and generally scripts are small enough where you can reason
+                    about globals fairly easily
+                  </li>
+                  <li>On polling: This is really not a time critical application, and is good enough for the purposes of this demo</li>
+                </ul>
+                For each timestep (~100ms) our serial read function polls the variable and then updates the heatmap cubes' attributes
+                accordingly:
+                <pre class="prettyprint lang-py">
+                  data_str = json.dumps({"material": {"opacity": output}})
+                  map_cube.update(data=data_str)</pre>
+                The outputs for temperature (degrees C) and humidity (%) are scaled  and clamped to the range 0-1 based on observed 
+                min/max values that covering the Arduino with my hand was able to produce. As mentioned earlier, some uniform
+                noise is added here in order to simulate having multiple "real sensors".
                 
-
-                <h3>Heat Map Implementation</h3>
-
                 <h3>Simulated Smart Fan</h3>
+                The simulated smart fan (as show in the demo video) and its associated on/off button are also represented as 
+                arena.Objects in the scene. For the demo, during the polling process we check to see which heatmap cubes are
+                within some Euclidean distance from the fan, and a minus correction factor is added to simulate cooling-down
+                or drying in the case of the humidity sensor. In-ARENA animations for objects are incredibly simple using
+                the A-Frame Animation tools.
 
                 <h3>Email Alert for Gas Leak Detection</h3>
-                
-                
+                Finally, an email alert system was developed in the case of a gas leak (simulated for this) or any other home disaster
+                such as flooding from a burst pipe. ARENA also has the capability of creating plenty of visual lighting effects
+                in addition to animating object manipulations in space. In this demo a red light was added during the "gas leak" above
+                the stove, drawing alert attention to a certain area within the 3D space. This event can easily be tied to some
+                sort of threshold on a real gas sensor.
+                <br>
+                <br>
+                The email alert system, likewise, can be tied to a threshold and currently we've implemented the system to send
+                the scene/home-owner an email when a leak is detected. The email can contain anything, but in our case we've decided
+                to include a link to the ARENA scene:
+                <img class="image center" src="img/gas_leak_email.PNG" style="max-width: 500px;">
+                Reason being, that ARENA scenes can also be accessed on mobile device browsers, which makes them especially handy
+                for when someone is away from home, and has no access to a computer! The details of implementation are included
+                in utils.py for the demo source code.
+              </p>
+
+              <h2>"Smart Lock Management" Demo Design</h2>
+              <hr>
+              <p class="text">
+                Overview of demo components
+
+                <h3>Section Header</h3>
+                Talk about the design of a component here
+
+                <h3>Section Header</h3>
+                Talk about the design of a component here
               </p>
             </div>
       </div>
