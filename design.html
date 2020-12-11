@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 
 <head>
   <title>Home IoT Management in ARENA</title>
@@ -63,15 +64,59 @@
               <h2>"Smart Lock Management" Demo Design</h2>
               <hr>
               <p class="text">
-                Talk about the design of Demo 1 here
+                Overview of demo components
+
+                <h3>Section Header</h3>
+                Talk about the design of a component here
+
+                <h3>Section Header</h3>
+                Talk about the design of a component here
               </p>
 
               <h2>"Generalized Heat Maps" Demo Design</h2>
               <hr>
+              
               <p class="text">
                 The goal of our second demo, "Generalized Heat Maps" is to provide
                 functionality for mapping out any 3D signal in the space with multiple (simulated) 
-                sensors by adding 3D visual effects in the replicated space
+                sensors by adding 3D visual effects in the replicated space. Additionally there is a component
+                that would allow for users to receive email alerts in case a sensor detects a hazardous anomaly
+                (gas leak, flooding water, etc.)
+
+                The main objectives to implement were:
+                <ul>
+                  <li>Generate a 3D heat map based on sensor measurements (simulated data based on 1 real data source)</li>
+                  <li>Have in-ARENA buttons to cycle through different maps (temperature, humidity, etc.)</li>
+                  <li>Have a simulated smart fan that shows the area cooling down when activated</li>
+                  <li>Receive email/notification alerts if a gas leak is detected (simulated gas sensor) and indicate
+                    there is a leak in-ARENA via some visual effects
+                  </li>
+                </ul>
+
+                <h3>Heat Map Cubes and Button Select</h3>
+                ARENA provides the ability to manipulate 3D object properties and animate them in a scene based on pretty much
+                anything. For this demo we chose to use simple cubes in order to represent a heatmap. Each cube would have its
+                size, color, and opacity changed depending on sensor readings. The following instantiates a cube object (within
+                a for loop with counter variable i):
+                <pre class="prettyprint lang-py">
+                    arena.Object(
+                      objName = "cube" + str(i),
+                      objType = arena.Shape.cube,
+                      location = pos, # Tuple (x,y,z)
+                      scale = (1,1,1),
+                      clickable = True,
+                      color = default_map_cube_color, # Tuple (r,g,b)
+                      data = '{"material": {"opacity": 0.5}}'
+                    ))</pre>
+                
+
+                <h3>Heat Map Implementation</h3>
+
+                <h3>Simulated Smart Fan</h3>
+
+                <h3>Email Alert for Gas Leak Detection</h3>
+                
+                
               </p>
             </div>
       </div>
