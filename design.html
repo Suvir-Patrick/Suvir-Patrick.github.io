@@ -33,9 +33,30 @@
               <hr>
               <p class="text">
                 If you want to see video demos, the "Results" menu bar link at the top contains them!
+                <h3>Overview</h3>
+                ARENA's goal is to make it easy to build mix-reality applications. As a result, it uses plenty of great technology
+                stacks to ensure that the development and user experience is as smooth as possible. In the case of this project
+                we were mainly concerned with how we would be able to utilize real-world sensors to provide feedback in the virtual
+                world.
+                As it turns out, ARENA allowed us to abstract this interaction to the high-level idea of publishers and subscribers
+                using MQTT messages. From their documentation:
                 <br>
+                <i>"ARENA communications are a series of MQTT messages which govern all objects and their properties."</i>
                 <br>
-                Talk about how ARENA interacts with sensors at a high level (MQTT, etc.)
+                As a result, it hardly matters what sort of hardware, operating system, each IoT device is running, as long as it has
+                some sort of capability to send and parse these very simple MQTT messages, interaction is possible. For example, an IoT
+                sensor maybe "publish" its sensor readings to a certain "topic" in the ARENA, and only other devices/clients who care
+                about those readings will "subscribe" to that topic. Devices are not limited to being only a publisher or subscriber.
+                In the case of an ARENA web browser client connection, you are publishing your "camera" perspective as you move, subscribing
+                to changes in other objects and other users' "camera" moves (This example is given in the ARENA documenation).
+                <img class="image center" src="img/basic_system.PNG">
+                <h3>Hardware and Software Technology</h3>
+                In terms of devices, we used the Arduino Nano 33 BLE Sense to
+                perform our sensing (purchased as required hardware for the class). While a great board for its price, this version did not include
+                any wireless capability outside of Bluetooth. Normally, as we mentioned above, you'd want to install a device specific library
+                to send MQTT messages, but that was not possible with this device. Instead, we used the ARENA-py Python library and general Python
+                capabilities to extract sensor data and forward it to the ARENA on the behalf of the Arduino.
+                With the exception of the Arduino code written in "Arduino-abstracted" C++, this project was almost entirely written in Python.
               </p>
 
               <h2>3D Environment</h2>
