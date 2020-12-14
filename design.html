@@ -214,13 +214,13 @@
 				mousedown event, which then used a very simple state transition machine to determine what animation to display depending on which state
 				the door was in. 
 				<pre class="prettyprint lang-py">
-					if event.event_type == arena.EventType.mousedown:
-						if door_status:
-							door_status = False
-							door_obj.update(data='{"animation": { "property": "rotation", "from": "0 90 0", "to": "0 0 0", "loop": false, "dur": 1000}}')
-						else:
-							door_status = True
-							door_obj.update(data='{"animation": { "property": "rotation","from": "0 0 0", "to": "0 90 0 ", "loop": false, "dur": 1000}}')
+			if event.event_type == arena.EventType.mousedown:
+				if door_status:
+					door_status = False
+					door_obj.update(data='{"animation": { "property": "rotation", "from": "0 90 0", "to": "0 0 0", "loop": false, "dur": 1000}}')
+				else:
+					door_status = True
+					door_obj.update(data='{"animation": { "property": "rotation","from": "0 0 0", "to": "0 90 0 ", "loop": false, "dur": 1000}}')
                       ...</pre>
 				As can see above, the door_status variable is used to determine the state of the door and then A-Frame animation tools were used depending on the state
 				to simulate the opening and closing of the door. This door status variable was also used to determine the arduino interactivity mentioned above as it would
