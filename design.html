@@ -203,8 +203,8 @@
                 <h3>ARENA-Arduino Interactivity</h3>
                 The main goal of the objectives above is to demonstrate some sort of interactivity between the Arduino and ARENA. 
 				This was made possible through use of serial ports to read and write data. In particular, we had a thread constantly
-				running that was connected to our arduino through its corresponding serial port. For this demo, data was sent to the
-				port when the button to unlock the door was pressed that would then be read by the arduino. The arduino would respond
+				running that was connected to our Arduino through its corresponding serial port. For this demo, data was sent to the
+				port when the button to unlock the door was pressed that would then be read by the Arduino. The Arduino would respond
 				to this data and start blinking its LED. Alternatively, if the button was pressed again to lock the door in the ARENA,
 				the blinking would stop. This would happen even if the ARENA is being accessed from another device such as another computer or mobile device
 				as shown in the demo. In particular the aim of this is to show how the ARENA can correspond to embedded devices.
@@ -217,14 +217,22 @@
 			if event.event_type == arena.EventType.mousedown:
 				if door_status:
 					door_status = False
-					door_obj.update(data='{"animation": { "property": "rotation", "from": "0 90 0", "to": "0 0 0", "loop": false, "dur": 1000}}')
+                                        door_obj.update(data='{"animation": 
+                                        { "property": "rotation", 
+                                        "from": "0 90 0", "to": "0 0 0", 
+                                        "loop": false, "dur": 1000}}')
 				else:
 					door_status = True
-					door_obj.update(data='{"animation": { "property": "rotation","from": "0 0 0", "to": "0 90 0 ", "loop": false, "dur": 1000}}')
+                                        door_obj.update(data='{"animation": 
+                                        { "property": "rotation",
+                                        "from": "0 0 0", "to": "0 90 0 ", 
+                                        "loop": false, "dur": 1000}}')
                       ...</pre>
-				As can see above, the door_status variable is used to determine the state of the door and then A-Frame animation tools were used depending on the state
-				to simulate the opening and closing of the door. This door status variable was also used to determine the arduino interactivity mentioned above as it would
-				determine whether the door was open or not and thus which message to send over serial to the arduino.
+				As you can see above, the door_status variable is used to determine the state of the door and then A-Frame animation tools were used depending on the state
+				to simulate the opening and closing of the door. This door status variable was also used to determine the Arduino interactivity mentioned above as it would
+				determine whether the door was open or not and thus which message to send over serial to the Arduino.
+        <h3>Flow Chart of Design</h3>
+        <img class="image center" src="img/flow_chart.png" style="max-width: 800px;">
 
               </p>
             </div>
