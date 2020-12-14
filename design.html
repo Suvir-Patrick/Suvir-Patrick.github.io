@@ -188,13 +188,28 @@
               <h2>"Smart Lock Management" Demo Design</h2>
               <hr>
               <p class="text">
-                Overview of demo components
+                The "Smart Lock Management" demo revolves around the idea of an IoT lock on the front door to the apartment. 
+				Often times people can end up in situations where they are injured or out of the house and they need to have
+				some way to be able to unlock the door to their house through their mobile device or computer. Using the ARENA,
+				we wanted to help tackle this problem, setting the following main objectives to tackle:
+				<ul>
+                  <li>Represent front door accurately in the ARENA interface and have simulated sensor data to request unlocking the door</li>
+                  <li>Have in-ARENA button to allow user to unlock door with corresponding animation involving ARENA door representation</li>
+                  <li>If door is unlocked, send serial data to the Arduino to have it start blinking, representing that the door opened in reality</li>
+                  <li>Receive email/notification alerts if someone requests the door to be unlocked so that the arena can be accessed from anywhere
+                  </li>
+                </ul>
 
-                <h3>Section Header</h3>
-                Talk about the design of a component here
+                <h3>ARENA-Arduino Interactivity</h3>
+                The main goal of the objectives above is to demonstrate some sort of interactivity between the Arduino and ARENA. 
+				This was made possible through use of serial ports to read and write data. In particular, we had a thread constantly
+				running that was connected to our arduino through its corresponding serial port. For this demo, data was sent to the
+				port when the button to unlock the door was pressed that would then be read by the arduino. The arduino would respond
+				to this data and start blinking its LED. Alternatively, if the button was pressed again to lock the door in the ARENA,
+				the blinking would stop. This would happen even if the ARENA is being accessed from another device such as another computer or mobile device
+				as shown in the demo. In particular the aim of this is to show how the ARENA can correspond to embedded devices.
 
-                <h3>Section Header</h3>
-                Talk about the design of a component here
+
               </p>
             </div>
       </div>
