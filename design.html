@@ -55,15 +55,7 @@
                 perform our sensing (purchased as required hardware for the class). While a great board for its price, this version did not include
                 any wireless capability outside of Bluetooth. Normally, as we mentioned above, you'd want to install a device specific library
                 to send MQTT messages, but that was not possible with this device. Instead, we used the ARENA-py Python library and general Python
-                capabilities to extract sensor data and forward it to the ARENA on the behalf of the Arduino. The code we used to do that was
-                based off the example here:
-                <a target="_blank" href=https://problemsolvingwithpython.com/11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python/>
-                  https://problemsolvingwithpython.com/11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python/
-                </a>
-                And the Arduino code we used to read temperature and humidity was based off this:
-                <a target="_blank" href=https://www.arduino.cc/en/Reference/ArduinoHTS221>
-                  https://www.arduino.cc/en/Reference/ArduinoHTS221
-                </a>
+                capabilities to extract sensor data and forward it to the ARENA on the behalf of the Arduino [4].
                 With the exception of the Arduino code written in "Arduino-abstracted" C++, this project was almost entirely written in Python.
               </p>
 
@@ -89,7 +81,7 @@
                 physically over the course of the project's design. Additionally, in terms of hardware, each of us only possessed
                 a single Arduino Nano 33 BLE Sense (equipped with its various sensors). As a result, we had to simulate some of the
                 sensor and feedback data for this project. For example, in the Generalized Heatmaps demo, we read real temperature and humidity data from
-                the Arduino as a single source [4] and added some uniform noise in order to simulate having multiple sensors spread out in
+                the Arduino as a single source [6] and added some uniform noise in order to simulate having multiple sensors spread out in
                 a room.
               </p>
 
@@ -166,7 +158,7 @@
                 arena.Objects in the scene. For the demo, during the polling process we check to see which heatmap cubes are
                 within some Euclidean distance from the fan, and a minus correction factor is added to simulate cooling-down
                 or drying in the case of the humidity sensor. In-ARENA animations for objects are incredibly simple using
-                the A-Frame Animation tools.
+                the A-Frame Animation tools [3].
 
                 <h3>Email Alert for Gas Leak Detection</h3>
                 Finally, an email alert system was developed in the case of a gas leak (simulated for this) or any other home disaster
@@ -182,7 +174,7 @@
                 <img class="image center" src="img/gas_leak_email.PNG" style="max-width: 500px;">
                 Reason being, that ARENA scenes can also be accessed on mobile device browsers, which makes them especially handy
                 for when someone is away from home, and has no access to a computer! The details of implementation are included
-                in utils.py for the demo source code, credit is given to RealPython.com for helping us get this setup [5]
+                in utils.py for the demo source code, credit is given to RealPython.com for helping us get this setup [5].
               </p>
 
               <h2>"Smart Lock Management" Demo Design</h2>
@@ -212,7 +204,7 @@
 				The door was created as a scaled cube object in the ARENA, a default object included in the ARENA library. It was connected to another
 				cube object that was set to be the button that controlled the door via a callback event. In particular, this event was specified as a
 				mousedown event, which then used a very simple state transition machine to determine what animation to display depending on which state
-				the door was in. 
+				the door was in [3]. 
 				<pre class="prettyprint lang-py">
 			if event.event_type == arena.EventType.mousedown:
 				if door_status:
