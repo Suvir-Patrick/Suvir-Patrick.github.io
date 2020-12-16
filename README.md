@@ -19,4 +19,4 @@ ARENA. Anyone with access to the appropriate link can, through a web browser, ex
 with the physical world themselves. Although management of IoT devices remotely is by no means a novel concept, 
 ARENA allows users to do so with a physical touch.
 
-This project repository is for the website at: https://suvir-patrick.github.io/. We reccomend that you check out our website which has links to all of our code, design, references, and presentation videos!
+This project repository is for the website at: https://suvir-patrick.github.io/. We recommend that you check out our website which has links to all of our code, design, references, and presentation videos!
