@@ -1,5 +1,7 @@
 M202A Project Fall 2020
 
+Members: Patrick Han, Suvir Mehrota
+
 Abstract:
 
 Mixed reality is the idea of combining virtual and real worlds in order to create an environment where both physical
@@ -17,38 +19,4 @@ ARENA. Anyone with access to the appropriate link can, through a web browser, ex
 with the physical world themselves. Although management of IoT devices remotely is by no means a novel concept, 
 ARENA allows users to do so with a physical touch.
 
-Timeline:
-
-Week 1:
-
-Generally searched for ideas for the project.
-
-Week 2: 
-
-Focused in on the idea of Mixed Reality/Augmented Reality.
-
-Week 3: 
-
-Researched into the ARENA framework and looked into its uses.
-Created project github website.
-
-Week 4: 
-
-Completed ARENA tutorial that was presented. Began discussion of using physical sensors with ARENA for interaction.
-Completed Proposal and began working on Python code for the project.
-
-Week 5:
-Begin background research on Mixed Reality and its implementations. Specifically, research focused on how it could help with simulation-based
-learning and remote activity.
-
-Week 6:
-Have Python Code written using the ARENA library provided that allows for beta testing of 1 devices.
-Begin working on video for presentation.
-
-Week 8: 
-Have an implementation fully  tested and working for at least 1 device.
-Have 5 minute video presentation ready to show design.
-
-Week 10:
-Have all devices intended to be used with the project fully working.
-Have a full demo ready to present along with 15 minute video.
+This project repository is for the website at: https://suvir-patrick.github.io/. We reccomend that you check out our website which has links to all of our code, design, references, and presentation videos!
